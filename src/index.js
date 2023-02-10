@@ -3,35 +3,41 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./css/styles.css";
 import { Currency } from "./api-calls/exchangerate-api";
 
-async function getCurrency(iso, value) {
-  const response = await Currency.getCurrency(iso);
+async function getCurrency(value, iso) {
+  const response = await Currency.getCurrency(value, iso);
   if (response.conversion_rates) {
-    printCurrency(response, value);
+    printCurrency(response, value, iso);
   } else {
-    printError(response, iso);
+    printError(response);
   }
 }
 
-function calculateCurrency(rate, value) {
-  return (rate * value).toFixed(2);
+function calculateCurrency(value, exchangeRate) {
+  return (value * exchangeRate).toFixed(2);
 }
 
-function printError(error, inputIso) {
-  const errorMessage = `There was a problem accessing the currency conversion data from ExchangeRate-API for ${inputIso}: ${error["error-type"]}`;
-  document.getElementById("error").innerText = errorMessage;
+function printError(error) {
+  const errorMessage = `There was an error in this request ${error["error-type"]}`;
+  document.querySelector("#response").innerText = errorMessage;
 }
 
-function printCurrency(value) {
-  const result = response.conversion_rates;
-  const exchangeResult = calculateCurrency(result, value);
-  document.querySelector("#input-response").innerText = exchangeResult;
+function printCurrency(response, inputValue, exchangeIso) {
+  /* eslint-disable no-console */
+  console.log(response);
+  console.log(inputValue);
+  const result = response.conversion_rates.exchangeIso;
+  const exchangeResult = calculateCurrency(inputValue, result);
+  document.querySelector("#response").innerText = exchangeResult;
+  console.log(exchangeIso);
+  /* eslint-enable no-console */
 }
 
 const handleForm = () => {
   const inputValue = document.querySelector("input").value;
   const inputIso = document.querySelector("#input-iso").value;
   const exchangeIso = document.querySelector("#exchange-iso").value;
-  getCurrency(inputIso, inputValue);
+
+  getCurrency(inputIso, inputValue, exchangeIso);
 };
 
 window.addEventListener("load", () => {
