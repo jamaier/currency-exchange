@@ -25,9 +25,9 @@ function printCurrency(response, value) {
   /* eslint-disable no-console */
   console.log(response);
   console.log(value);
+  let result = response['conversion_rates'];
   const responseDisplay = document.querySelector('#response-display');
   let exchangeOutput = document.querySelector('#exchange-iso').value;
-  let result = response['conversion_rates'];
   responseDisplay.value = calculateCurrency(value, result[exchangeOutput]);
   console.log(responseDisplay.value);
   /* eslint-enable no-console */
