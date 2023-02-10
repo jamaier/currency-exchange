@@ -1,5 +1,5 @@
 
-export default class Currency {
+export class Currency {
   static async getCurrency(iso) {
     try {
       const response = await fetch(
