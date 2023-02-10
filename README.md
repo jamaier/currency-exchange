@@ -1,6 +1,6 @@
-# _{Application Name}_
+# _Currency Exchanger_
 
-#### By _Jacob Maier & Erin Timlin_
+#### By _Jacob Maier_
 
 #### _{Short description}_
 
