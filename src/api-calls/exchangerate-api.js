@@ -7,7 +7,7 @@ export class Currency {
       );
       const jsonifiedResponse = await response.json();
       if (!response.ok) {
-        const errorMessage = `${response.status} ${response.statusText}
+        const errorMessage = `${response.status} ${jsonifiedResponse.statusText}
         ${jsonifiedResponse.message}`;
         throw new Error(errorMessage);
       }

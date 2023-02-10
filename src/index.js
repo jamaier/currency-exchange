@@ -3,17 +3,17 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./css/styles.css";
 import { Currency } from "./api-calls/exchangerate-api";
 
-async function getCurrency(iso, value, exchangeIso) {
+async function getCurrency(iso, value) {
   const response = await Currency.getCurrency(iso);
   if (response.conversion_rates) {
-    printCurrency(response, value, exchangeIso);
+    printCurrency(response, value);
   } else {
     printError(response, iso);
   }
 }
 
-async function calculateCurrency(response, inputResponse, value) {
-  return (response[inputResponse] * value).toFixed(2);
+function calculateCurrency(rate, value) {
+  return (rate * value).toFixed(2);
 }
 
 function printError(error, inputIso) {
@@ -21,17 +21,17 @@ function printError(error, inputIso) {
   document.getElementById("error").innerText = errorMessage;
 }
 
-function printCurrency(apiResponse, value, exchangeIso) {
-  const response = apiResponse["conversion_rates"];
-  const result = calculateCurrency(response[exchangeIso], value);
-  document.getElementById("response-container").innerText = result;
+function printCurrency(value) {
+  const result = response.conversion_rates;
+  const exchangeResult = calculateCurrency(result, value);
+  document.querySelector("#input-response").innerText = exchangeResult;
 }
 
 const handleForm = () => {
   const inputValue = document.querySelector("input").value;
   const inputIso = document.querySelector("#input-iso").value;
   const exchangeIso = document.querySelector("#exchange-iso").value;
-  getCurrency(inputIso, inputValue, exchangeIso);
+  getCurrency(inputIso, inputValue);
 };
 
 window.addEventListener("load", () => {
