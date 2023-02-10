@@ -3,10 +3,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./css/styles.css";
 import { Currency } from "./api-calls/exchangerate-api";
 
-async function getCurrency(value, iso) {
-  const response = await Currency.getCurrency(value, iso);
+async function getCurrency(iso, value) {
+  const response = await Currency.getCurrency(iso);
   if (response.conversion_rates) {
-    printCurrency(response, value, iso);
+    printCurrency(response, value);
   } else {
     printError(response);
   }
@@ -18,17 +18,18 @@ function calculateCurrency(value, exchangeRate) {
 
 function printError(error) {
   const errorMessage = `There was an error in this request ${error["error-type"]}`;
-  document.querySelector("#response").innerText = errorMessage;
+  document.querySelector("#response-display").innerText = errorMessage;
 }
 
-function printCurrency(response, inputValue, exchangeIso) {
+function printCurrency(response, value) {
   /* eslint-disable no-console */
   console.log(response);
-  console.log(inputValue);
-  const result = response.conversion_rates.exchangeIso;
-  const exchangeResult = calculateCurrency(inputValue, result);
-  document.querySelector("#response").innerText = exchangeResult;
-  console.log(exchangeIso);
+  console.log(value);
+  const responseDisplay = document.querySelector('#response-display');
+  let exchangeOutput = document.querySelector('#exchange-iso').value;
+  let result = response['conversion_rates'];
+  responseDisplay.value = calculateCurrency(value, result[exchangeOutput]);
+  console.log(responseDisplay.value);
   /* eslint-enable no-console */
 }
 
