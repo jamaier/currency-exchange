@@ -1,17 +1,21 @@
 import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./css/styles.css";
-import { getCurrency } from "./main";
+import { getCurrency, calculateCurrency } from "./main";
 
-function printError()
 
-function printConversion(response, iso) {
+
+function printCurrency(apiResponse, iso) {
+  document.querySelector('input-response').innerHTML = null;
+  let inputResponse = document.querySelector('input-response');
+  let response = apiResponse['conversion_rates'];
   
 }
 
 const handleForm = () => {
   const inputIso = document.querySelector('#input-iso').value;
   const exchangeIso = document.querySelector('#exchange-iso').value;
+  getConversion(inputIso, exchangeIso)
 }
 
 

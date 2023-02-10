@@ -2,7 +2,7 @@ import { Currency } from "./api-calls/exchangerate-api";
 
 export async function getCurrency(iso, value) {
   const response = await Currency.getCurrency(iso, value);
-  if (response.success === true) {
+  if (response.conversion_rates) {
     printCurrency(response);
   } else {
     printerror(response);
