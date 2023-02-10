@@ -20,7 +20,7 @@ _{Detailed description}_
 ## Setup/Installation Requirements
 
 * _Clone this repo to your desktop_
-* _Create an API Key at https://developers.giphy.com/dashboard/_
+* _Create an API Key at https://www.exchangerate-api.com/_
 * _Create a new file named `.env` and place you API key inside a new line with the following:`API_KEY = {Your API Key Here}`_
 * _Run `npm install` to install proper packages_
 * _Run `npm run build` to build project_

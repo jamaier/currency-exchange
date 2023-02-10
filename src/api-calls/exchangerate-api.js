@@ -1,9 +1,9 @@
 
 export default class Currency {
-  static async getCurrency(id) {
+  static async getCurrency(iso) {
     try {
       const response = await fetch(
-        `https://v6.exchangerate-api.com/v6/${process.env.EXCHANGERATE_API_KEY}/latest/${id}?`
+        `https://v6.exchangerate-api.com/v6/${process.env.EXCHANGERATE_API_KEY}/latest/${iso}?`
       );
       const jsonifiedResponse = await response.json();
       if (!response.ok) {

@@ -1,9 +1,37 @@
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
-    <title>Temp</title>
+    <title>Currency Exchange</title>
   </head>
   <body>
+    <div class="container-main">
+      <div class="header">
+        <h1>Currency Exchanger</h1>
+        <h3>For all of your current currency exchanging conundrums.</h3>
+      </div>
+      <div class="form-container">
+        <h4>Please input and exchange value:</h4>
+        <form id="exchange-form">
+          <label for="input-value">Enter a number here:</label>
+          <input type="text">
+          <label for=inpute-iso"></label>
+          <select name="input-iso" id="input-iso">
+            <option value="USD" selected>USD</option>
+            <option value="CAN">CAN</option>
+          </select>
+          <label for="exchange-value">to</label>
+          <select name="exchange-iso" id="exchange-iso">
+            <option value="USD">USD</option>
+            <option value="CAN" selected>CAN</option>
+          </select>
+        <button type="submit">Submit</button>
+        </form>
+      </div>
+      <div class="response-container">
+        <h3 id="input-response"></h3>
+      </div>
+    </div>
+
     <img src="./assets/images/stock-puppy-photo.jpg" alt="such a pup!">
   </body>
 </html>
