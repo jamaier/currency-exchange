@@ -1,9 +1,32 @@
+body {
+  background-color: #e2e1e1;
+}
 
+.header {
+  text-align: center;
+  margin: 20px;
+  margin: 50px;
+  border: 3px solid black;
+  border-radius: 5px;
+}
 
+.form-container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin: 50px;
+  border: 3px solid black;
+  border-radius: 5px;
+}
 
+.response-container {
+  text-align: center;
+
+}
 
 /* Nice button styling option */
-/* .button {
+
+.button {
   margin: 20px;
   display: inline-block;
   padding: 15px 25px;
@@ -13,18 +36,18 @@
   text-decoration: none;
   outline: none;
   color: #fff;
-  background-color: #4CAF50;
+  background-color: #929292;
   border: none;
   border-radius: 15px;
   box-shadow: 0 9px #999;
 }
 
 .button:hover {
-  background-color: #3e8e41
+  background-color: #727372
 }
 
 .button:active {
-  background-color: #3e8e41;
+  background-color: #919291;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
-} */
+}

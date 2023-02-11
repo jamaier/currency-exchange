@@ -12,19 +12,28 @@
       <div class="form-container">
         <h4>Please input and exchange value:</h4>
         <form id="input-form">
-          <label for="input-value">Enter a number here:</label>
+          <label for="input-iso">Enter a number here:</label>
           <input type="number" />
           <label for="input-iso"></label>
           <select name="input-iso" id="input-iso">
             <option value="USD" selected>USD</option>
+            <option value="EUR">EUR</option>
+            <option value="JPY">JPY</option>
+            <option value="AUD">AUD</option>
+            <option value="GIP">GIP</option>
+            <option value="MXN">MXN</option>
           </select>
           <label for="exchange-iso">to</label>
           <select name="exchange-iso" id="exchange-iso">
             <option value="CAD" selected>CAD</option>
+            <option value="USD">USD</option>
             <option value="EUR">EUR</option>
             <option value="JPY">JPY</option>
+            <option value="AUD">AUD</option>
+            <option value="GIP">GIP</option>
+            <option value="MXN">MXN</option>
           </select>
-          <button type="submit">Submit</button>
+          <button type="submit" class="button">Submit</button>
         </form>
       </div>
       <div class="response-container">
