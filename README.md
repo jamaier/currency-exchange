@@ -15,7 +15,7 @@
 
 ## Description
 
-_Using https://www.exchangerate-api.com key for current exchange rates this web application takes user's numerical input and selectable exchange options the user is presented with their chosen exchange rate._
+_Using  an `exchangerate-api` key for current exchange rates this web application takes user's numerical input and selectable exchange options the user is presented with their chosen exchange rate._
 
 ## Setup/Installation Requirements
 
