@@ -24,7 +24,7 @@ function printCurrency(response, value) {
   if (value !== null) {
     let result = response["conversion_rates"];
     const responseDisplay = document.querySelector("#response-display");
-    let exchangeInput = document.querySelector('#input-iso').value;
+    let exchangeInput = document.querySelector("#input-iso").value;
     let exchangeOutput = document.querySelector("#exchange-iso").value;
     responseDisplay.value = calculateCurrency(value, result[exchangeOutput]);
     document.querySelector(
